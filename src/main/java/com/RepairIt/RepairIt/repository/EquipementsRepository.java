@@ -1,9 +1,10 @@
-package com.app.FixIt.repository;
+package com.RepairIt.RepairIt.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.RepairIt.RepairIt.entities.Equipements;
 
-import com.app.FixIt.entities.Equipements;
+
 
 @Repository
 public interface EquipementsRepository extends JpaRepository<Equipements, Long>{

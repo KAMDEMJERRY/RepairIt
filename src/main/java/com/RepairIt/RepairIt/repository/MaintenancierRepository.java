@@ -1,13 +1,11 @@
-package com.app.FixIt.repository;
+package com.RepairIt.RepairIt.repository;
 
 // import org.hibernate.mapping.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import com.RepairIt.RepairIt.entities.Maintenancier;
 import java.util.List;
 
-import com.app.FixIt.entities.Maintenancier;
-import java.util.List;
 
 
 @Repository

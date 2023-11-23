@@ -1,56 +1,119 @@
-package com.app.FixIt.entities;
+package com.RepairIt.RepairIt.entities;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 import java.util.List;
 
+
+
+/**
+ * Toute modification sur cette classe est proscrite
+ * Et doit etre signale si necessaire
+*/
 @Entity
 @Table(name="Maintenancier")
 public class Maintenancier extends User {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // private Long idM;
-    
-    //private byte[] cv;
+  
+
     private String Specialite;
-    @OneToMany
-    private List<Taches> taches;
+    
     private String nom_complet;
+    
+    /**
+     * Occupe / Libre
+     * Le type de ce champs devra 
+     * etre modifie par une enumeration
+     */
     private Boolean status;
+
     private String num_compte; 
+
+    /**
+     * Champ dont l'utilite est a revoir
+    */
     private String adresse; 
-    private double lattitude;
+
+    private Double latitude;
     
     private double longitude;
+
     private String sexe;
 
+    /**
+     * La liste des Taches 
+     * Proposees du maintenancier
+     */
+    @OneToMany
+    private List<Taches> taches;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public double getLattitude() {
-        return lattitude;
+        return latitude;
     }
+
     public void setLattitude(double lattitude) {
-        this.lattitude = lattitude;
+        this.latitude = lattitude;
     }
+
     public double getLongitude() {
         return longitude;
     }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
     
    
-   /*  public byte[] getCv() {
-        return cv;
-    }
-    public void setCv(byte[] cv) {
-        this.cv = cv;
-    }*/
     public String getSexe() {
         return sexe;
     }
+
     public void setSexe(String sexe) {
         this.sexe = sexe;
     }

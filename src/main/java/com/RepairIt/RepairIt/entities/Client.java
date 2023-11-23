@@ -3,6 +3,11 @@ package com.RepairIt.RepairIt.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+
+/**
+ * Toute modification sur cette classe est proscrite
+ * Et doit etre signale si necessaire
+*/
 @Entity
 @Table(name="Client")
 public class Client extends User{

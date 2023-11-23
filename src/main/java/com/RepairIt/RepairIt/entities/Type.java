@@ -1,8 +1,11 @@
-package com.app.FixIt.entities;
+package com.RepairIt.RepairIt.entities;
 
 public enum Type {
+
     ORDINATEUR("ordinateur"),
+
 	MACHINEALAVER("machine a laver"),
+    
 	FRIGERATEUR("frigo");
 
 	Type(String key) {

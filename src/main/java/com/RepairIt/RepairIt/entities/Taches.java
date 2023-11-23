@@ -1,42 +1,31 @@
-package com.app.FixIt.entities;
+package com.RepairIt.RepairIt.entities;
 
-//import java.awt.List;
-import java.sql.Date;
+
 import java.time.LocalDate;
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
+
+
+/**
+ * Toute modification sur cette classe est proscrite
+ * Et doit etre signale si necessaire
+*/
 @Entity
-// @Table(name = "taches")
 @Table(name = "taches")
 public class Taches {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="IdMaintenancier")
-    private Maintenancier maintenancier;
-
-    @ManyToOne
-    @JoinColumn(name="IdClient")
-    private Client client;
-
-    @OneToOne
-    @JoinColumn(name="IdEquipement")
-    private Equipements equipements;
-
-    @OneToMany
-    private List<Produit> produits;//produits de boutique
+   
 
     private Integer cout;
 
@@ -48,14 +37,49 @@ public class Taches {
 
     private String description;
 
-    private byte[] image;
+    private Byte[] image;
 
-    private double latitude;
+    private Double latitude;
 
-    private double longitude;
+    private Double longitude;
 
+    /**
+     * true-active / false-inactive
+     * Champs permettant de
+     * determiner si la tache est prise 
+     * en charge ou pas.
+     */
+    private Boolean active;
+
+    /**
+     * Champ dont l'utilte est a revoir
+     * 
+     */
     private String imgString;
-    
+
+
+    /**
+     * Maintenancier qui s'occupe 
+     * de la tache.
+     */
+    @ManyToOne
+    @JoinColumn(name="IdMaintenancier")
+    private Maintenancier maintenancier;
+
+    /**
+     * Le client a qui la tache appartient
+     */
+    @ManyToOne
+    @JoinColumn(name="IdClient")
+    private Client client;
+
+    /**
+     * Le type de l'equipement
+     * sujet de la tache
+     */
+    @OneToOne
+    @JoinColumn(name="IdEquipement")
+    private Equipements equipements;
 
     
     public Taches() {
@@ -127,11 +151,11 @@ public class Taches {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
-    public byte[] getImage() {
+    public Byte[] getImage() {
         return image;
     }
     
-    public void setImage(byte[] image) {
+    public void setImage(Byte[] image) {
         this.image = image;
     }
 
@@ -141,11 +165,13 @@ public class Taches {
     public void setImgString(String imgString) {
         this.imgString = imgString;
     }
-    public List<Produit> getProduits() {
-        return produits;
+    
+    public Boolean getActive() {
+        return active;
     }
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
 }

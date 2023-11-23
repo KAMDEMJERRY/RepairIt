@@ -1,12 +1,12 @@
-package com.app.FixIt.repository;
+package com.RepairIt.RepairIt.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.RepairIt.RepairIt.entities.Client;
+import com.RepairIt.RepairIt.entities.Taches;
 
-import com.app.FixIt.entities.Client;
-import com.app.FixIt.entities.Taches;
-import java.util.List;
+
 
 
 @Repository
